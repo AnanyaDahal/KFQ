@@ -26,8 +26,15 @@
 | KFQ_L_013 | SQL Injection Attempt | none | Enter SQL injection in fields (eg:ananya.dahal+kfq1@ing.edu.np' OR '1' = ' 1 ) | Login should fail/ no security breach | Login Failed "Invalid email address" error message shown | PASS |
  | KFQ_L_013 | XSS attack in email input field | None | Enter script in input fields (eg: XSS Script ) | Input is sanitized, no script execution | Invalid email error message shown, Input sanitized, no script executed | PASS |
 
+
+
+
 ## Module - Discover
+
+
 ### Test Case 
+
+
 | Test ID | Description/Scenario | Precondition | Test Step | Expected Result | Actual Result | Status |
 |---------|----------------------|--------------|-----------|-----------------|---------------|--------|
 | KFQ_D_001 | Verify Discover page loads successfully | User is logged in | Navigate to discover page | Page should loads without error and all sections should be visible | Page loads without error and all the sections are properly visible | PASS |
@@ -40,4 +47,65 @@
 | KFQ_D_008 | Verify "Verify View Sifu Guide" button | User is logged in | click the "View Sifu Guide" button | The guide in the form of list or video should be shown |The video guide of the difu arena is shown in detail | PASS |
 | KFQ_D_009 | Verify "Become The Defender of Education" button | User is logged in | click the "Become The Defender of Education" button | The pop up for "Become The Defender of Education" should be shown or the user should be redirected to Become The Defender of Education page | The user gets redirected to Become The Defender of Education page | PASS |
 | KFQ_D_010 | Verify Top Sifu leaderboard display | User is on discovery page | Check who is the top sifu | The top sifu should be displayed also when clicked on sifu name redirect to sifu contents | The top sifu are displayed and when the sifu names are clicked user gets redirected to sifu contents | PASS |
+| KFQ_D_011 | Verify leaderboard refresh timestamp | User is on discovery page | Referesh the discovery page, Check "Updated X minutes ago" text | Timestamp is visible and updates periodically | Time stamp is visible and updates periodically after refresh | PASS |
+| KFQ_D_012 | Verify challenge cards display | User is on discovery page | Scroll to "From Kung Fu Quiz Team" section, select the video check if the video is working properly or not | Challenge cards should be displayed with title, duration and metadata, when click on the card it should redirect to either the video section, quiz section of the respective challenge | Challenge cards are displayed with title, duration, and metadata, when click on the card it redirects to the video section or the quiz section of the respective challenge | PASS |
+| KFQ_D_013 | Verify view all button | User is on discovery page in From Kung Fu Quiz Team section | Click on the view all button | All the challenges should be shown in a scroll view or user should be redirected to the different page | When user clicks user is redirected to different page where all the challenges are shown | PASS |
+| KFQ_D_014 | Verify Top challenges section | User is in discovery page | Scroll to the top challenges section | The top challenges should be there and when clicked on the challenges it should navigate to respective challenge page | Top challenges across all challenges are shown and when clicked on the challenge it navigates to respective challenge page | PASS |
+| KFQ_D_015 | Verefy Around the Kung Fu Arena section | User is in discovery page | Scroll to the Around the Kung Fu Arena section | The Around the Kung Fu Arena should be there and when clicked on the challenges it should navigate to respective challenge page | The Around the Kung Fu Arena across all challenges are shown and when clicked on the challenge it navigates to respective challenge page | PASS |
+| KFQ_D_016 | Verify Around the Kung Fu Arena, video challenge button | User is on discovery page in Around the Kung Fu Arena section | Scroll to the Around the Kung Fu Arena section, video challenge button | When click on video challenge button only video challenges should be filtered | When user clicks on video challenge button, all the video challenges are filtered and shown | PASS |
+| KFQ_D_017 | Verify Around the Kung Fu Arena, quiz challenge button | User is on discovery page in Around the Kung Fu Arena section | Scroll to the Around the Kung Fu Arena section, quiz challenge button | When click on quiz challenge button only quiz challenges should be filtered | When user clicks on quiz challenge button, all the quiz challenges are filtered and shown | PASS | 
+| KFQ_D_018 | Verify Around the Kung Fu Arena, flashcard button | User is on discovery page in Around the Kung Fu Arena section | Scroll to the Around the Kung Fu Arena section, flashcard button | When click on flashcard button only flashcard should be filtered | When user clicks on flashcard button, all the flashcard are filtered and shown | PASS |
+
+
+
+## Module - Challenges
+
+
+### Test Case 
+
+
+| Test ID | Description/Scenario | Precondition | Test Step | Expected Result | Actual Result | Status |
+|---------|----------------------|--------------|-----------|-----------------|---------------|--------|
+| KFQ_C_001 | Verify Challenges page loads | User is logged in | Navigate to challenges page | Page should load with header and how many challenges are there | Page loads with header "challenges" and the number of challenges there | PASS |
+| KFQ_C_002 | Verify Create New Challenge card | User is in challenge page | click create new challenge button | The Create New challenge card should pop up from where user should be able to add more challenges | When user clicks create new challenge, card pops up from where user can add more challenges of their choice (video, quiz, flashcard) | PASS |
+| KFQ_C_003 |  Verefy challenge mode dropdown | Create challenge popup is open | click challenge mode dropdown | should display options (quiz-only, dlashcard) | All the challenge types are visible in dropdown | PASS |
+| KFQ_C_004 | Verify challenge creation with required field in video challenges | Pop up is open | Enter title, URL and click  "Create Challenge" | Challenge should be created successfully and notification should be shown | Challenge is crreated successfully and notification saying challenge successfully created is shown | PASS |
+| KFQ_C_005 | Verify challenge creation with empty fields | Pop up is open | Without filling the fields click create challenge | Error message should pop up or the fields that needs to be filled should show required option | Required message is shown below the input field | PASS |
+| KFQ_C_006 | Verify urls format | Pop up is open | Enter other urls except the youtube video url | Error message or invalid url pop up should be shown | Error message saying invalid url format is shown | PASS |
+| KFQ_C_007 | Verify cancle button in pop up | Pop up is open | Click "Cancle" | popup should close without saving | popup closes and no challenge is created | PASS |
+| KFQ_C_008 | Verify clicking on existing challenge | challenge exists | click on a challenge card | user should be redirected to challenge detail page | user gets redirected properly | PASS |
+| KFQ_C_009 | Verify challenge details page | user is on challenge detail page | observe details | should show subject, grade, date, status | all details are displayed correctly | PASS |
+| KFQ_C_010 | verify challenge status (Draft/ Published) | Challenge exists | open challenge | status should be visible | Status (Draft/ Publish) is shown correctly | PASS |
+| KFQ_C_011 | Verify preview quiz option | Challenge detail page | Click preview quiz | Quiz preview should open | Quiz preview loads successfully | PASS |
+| KFQ_C_012 | Verify edit challenge | Challenge detail page | Click edit | Should allow editing | User can edit and save changes | PASS |
+| KFQ_C_013 | Verify customize quiz | Challenge detail page | Click customize quiz | Customization options should appear | Customization works correctly | PASS |
+| KFQ_C_014 | Verify present challenge | challenge detail page | click present mode | should redirect to presentation mode | Redirects correctly to presentation mode | PASS |
+| KFQ_C_015 | Verify Video Challenges filter | User is on challenges page | Click "Video Challenges" | Only video challenges should be displayed | Only video challenges are shown | PASS |
+| KFQ_C_016 | Verify Quiz Challenges filter | User is on challenges page | Click "Quiz Challenges" | Only quiz challenges should be displayed | Only quiz challenges are shown | PASS |
+| KFQ_C_017 | Verify Flashcards filter | User is on challenges page | Click "Flashcards" |Only flashcard challenges should be displayed | Only flashcards are shown | PASS |
+| KFQ_C_018 | Verify Add Video Challenge | Video filter is active | Click "Add Video Challenge" | Popup should open | Popup opens for video challenge | PASS |
+| KFQ_C_019 | Verify Add Quiz Challenge | Quiz filter is active | Click "Add Quiz Challenge" | Popup should open | Popup opens for quiz challenge | PASS |
+| KFQ_C_020 | Verify Add Flashcard Challenge | Flashcard filter is active | Click "Add Flashcard Challenge" | Popup should open | Popup opens for flashcard challenge | PASS |
+| KFQ_C_021 | Verify challenge count update | User creates/deletes challenge | Perform create/delete action | Challenge count should update correctly | Count updates correctly | PASS |
+| KFQ_C_022 | Verify empty state | No challenges exist | Navigate to challenges page | Should show empty state or prompt to create | Empty state displayed correctly | PASS |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
