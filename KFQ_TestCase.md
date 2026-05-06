@@ -90,15 +90,32 @@
 | KFQ_C_022 | Verify empty state | No challenges exist | Navigate to challenges page | Should show empty state or prompt to create | Empty state displayed correctly | PASS |
 
 
+## Module - Challenges
 
 
+### Test Case 
 
+## Module - Dojos
+ 
 
-
-
-
-
-
+| Test ID | Description/Scenario | Precondition | Test Step | Expected Result | Actual Result | Status |
+|---------|----------------------|--------------|-----------|-----------------|---------------|--------|
+| KFQ_DJ_001 | Verify Dojos page loads | User is logged in | Navigate to Dojo page | Page loads with total number of dojos created by user | Page loads successfully with correct dojo count in header | PASS |
+| KFQ_DJ_002 | Verify Create New Dojo button popup | On Dojo Page | Click "Create New Dojo" button | Create Dojo popup should be displayed | Popup opens successfully | PASS |
+| KFQ_DJ_003 | Verify dojo list display | Dojos exist | View left panel | All dojos listed with name & category | All dojo list items are displayed | PASS |
+| KFQ_DJ_004 | Verify dojo selection | Dojos exist | Click a dojo | Selected dojo highlighted and details shown on right panel | User is redirected to dojo details view | PASS |
+| KFQ_DJ_005 | Verify dojo details panel | Dojo selected | View right panel | Title, date, status, ID, and stats are displayed correctly | The title, date, status, ID are displayed properly and correctly in details page | PASS |
+| KFQ_DJ_006 | Verify search functionality (valid input) | Dojos exist | Enter valid keyword in search | Matching dojos should be displayed | When the valid keyword is given dojos related to that keyword are present | PASS |
+| KFQ_DJ_007 | Verify default dojo selection | Multiple dojos exist | Open Dojos page | First or last selected dojo is displayed by default | The previous dojo that was selected is displayed | PASS |
+| KFQ_DJ_008 | Verify dojo according to filter (Active/Inactive, game dojo/assesment dojo/feedback dojo) | Dojos exist with Active & Inactive status | Select "Active" or "Inactive" filter | Dojo list count should update based on selected status filter | Dojo list count does not update according to Active/Inactive filter | FAIL |
+| KFQ_DJ_009 | Verify dojo list count according to challenge type filters | Dojos exist with different challenge types (Video, Quiz) | Select "Video Challenges" or "Quiz Challenges" filter | Dojo list count updates based on selected challenge type | Dojo list count updates correctly according to Video/Quiz filters | PASS |
+| KFQ_DJ_010 | Verify create dojo functionality | User is logged in | Create a new dojo with valid details | New dojo is added to list and displayed | After new dojo created it is added on the list and is displayed | PASS |
+| KFQ_DJ_011 | Verify newly created dojo | New dojo created | Create a dojo | redirect to particular dojo section where all the dojos related to that challenge are displayed | User gets redirected to particular challenge section where all the dojos related to that challenge are there | PASS |
+| KFQ_DJ_012 | Verify Active filter functionality | Dojos with mixed status exist | Select "Active" filter | Only active dojos should be displayed | Active and inactive dojos are displayed (BUG) | FAIL |
+| KFQ_DJ_013 | Verify Inactive filter functionality | Dojos with mixed status exist | Select "Inactive" filter | Only inactive dojos should be displayed | Dojos that are inactive are displayed | PASS |
+| KFQ_DJ_014 | Verify All Status filter | Dojos with mixed status exist | Select "All Status" | All dojos are displayed | All dojos regardless of status are displayed | PASS |
+| KFQ_DJ_015 | Verify search functionality (no result) | Dojos exist | Enter invalid keyword | No results / empty state shown | No dojo exists error message is displayed | PASS |
+| KFQ_DJ_016 | Verify empty dojo state | No dojos exist | Navigate to Dojos page | Empty state message is displayed | No dojo exits create new dojo message is displayed in case of the empty dojo | PASS |
 
 
 
