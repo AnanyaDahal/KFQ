@@ -90,12 +90,16 @@
 | KFQ_C_022 | Verify empty state | No challenges exist | Navigate to challenges page | Should show empty state or prompt to create | Empty state displayed correctly | PASS |
 
 
-## Module - Challenges
+
+
+
+
+
+## Module - Dojos
+
 
 
 ### Test Case 
-
-## Module - Dojos
  
 
 | Test ID | Description/Scenario | Precondition | Test Step | Expected Result | Actual Result | Status |
@@ -119,10 +123,62 @@
 
 
 
+## Module - Profile
+
+
+
+### Test Case 
+
+
+| Test ID | Description/Scenario | Precondition | Test Step | Expected Result | Actual Result | Status |
+|---------|----------------------|--------------|-----------|-----------------|---------------|--------|
+| KFQ_PR_001 | Verify Profile page loads successfully | User is logged in | Navigate to Profile page | Profile page should load with all tabs visible | Profile page loads successfully with all sections visible | PASS |
+| KFQ_PR_002 | Verify Account Information tab | User is on Profile page | Click "Account Information" tab | User account details should be displayed | Account details displayed correctly | PASS |
+| KFQ_PR_003 | Verify user profile information display | User account exists | View Full Name and Email fields | Correct user information should be displayed | Correct user information displayed | PASS |
+| KFQ_PR_004 | Verify Update Avatar button functionality | User is on Account Information tab | Click "Update Avatar" and upload image | Avatar should update successfully | Avatar updated successfully | PASS |
+| KFQ_PR_005 | Verify Remove Avatar functionality | User has uploaded avatar | Click "Remove Avatar" | Avatar should be removed and default avatar shown | Avatar removed successfully | PASS |
+| KFQ_PR_006 | Verify Save Changes button | User updates profile details | Modify profile information and click "Save Changes" | Updated profile information should be saved | Profile changes saved successfully | PASS |
+| KFQ_PR_007 | Verify Change Password tab navigation | User is on Profile page | Click "Change Password" tab | Change Password section should open | Change Password section opens successfully | PASS |
+| KFQ_PR_008 | Verify password change with valid credentials | User knows current password | Enter valid old password, new password, confirm password and submit | Password should update successfully | Password updated successfully | PASS |
+| KFQ_PR_009 | Verify password validation requirements | User is on Change Password tab | Enter weak password | Validation message should appear according to password rules | The change password button doesnt enable unless the user keeps strong password | PASS |
+| KFQ_PR_010 | Verify confirm password mismatch validation | User is changing password | Enter different New Password and Confirm Password | User should receive mismatch validation error | The change password button doesnt enable unless password match | PASS |
+| KFQ_PR_011 | Verify Preferences tab loads | User is on Profile page | Click "Preferences" tab | Preferences section should load successfully | Preferences section loaded correctly | PASS |
+| KFQ_PR_012 | Verify subject preference selection | User is on Preferences tab | Select or deselect subjects | Selected preferences should be highlighted and saved | Subject preferences updated correctly | PASS |
+| KFQ_PR_013 | Verify grade preference selection | User is on Preferences tab | Select or deselect grades | Selected grade preferences should be updated | Grade preferences updated correctly | PASS |
+| KFQ_PR_014 | Verify Update Preferences button | Preferences modified | Click "Update Preferences" | Preferences should save successfully | Preferences updated successfully | PASS |
+| KFQ_PR_015 | Verify Discover page recommendations update based on preferences | User has updated preferences | Update subjects/grades, Navigate to Discover page | Recommended videos around Kung Fu Arena should change according to preferences | Recommended videos updated according to selected preferences | PASS |
+| KFQ_PR_016 | Verify search functionality in Preferences | User is on Preferences tab | Search for subject or grade | Matching subjects/grades should be displayed | Search functionality works correctly | PASS |
+| KFQ_PR_017 | Verify Subscription tab loads | User is on Profile page | Click "Subscription" tab | Subscription plans and features should be displayed | Subscription section loads correctly | PASS |
+| KFQ_PR_018 | Verify Unlock All Features popup | User is on Subscription tab | Click "Unlock All Features" | Payment popup/modal should appear | Payment popup displayed successfully | PASS |
+| KFQ_PR_019 | Verify payment method selection | Payment popup is open | Select PayPal or Stripe | Selected payment method should be highlighted and redirect to the selected payment method | Payment method selection works correctly and upon clicking continue user is redirected to the payment page | PASS |
+| KFQ_PR_020 | Verify Continue button activation after payment selection | Payment popup is open | Select payment method | Continue button should become enabled | Continue button enabled correctly | PASS |
+| KFQ_PR_021 | Verify Cancel button in payment popup | Payment popup is open | Click "Cancel" | Popup should close without payment process | Popup closed successfully | PASS |
+| KFQ_PR_022 | Verify popup close icon functionality | Payment popup is open | Click close (X) icon | Popup should close successfully | Popup closed successfully | PASS |
+| KFQ_PR_023 | Verify current subscription plan display | User has active/current plan | Open Subscription tab | Current plan should be correctly highlighted | Current plan displayed correctly | PASS |
+| KFQ_PR_024 | Verify Google account linking button | User is on Account Information tab | Click "Link with Google" button | User should be redirected to Google account linking flow | No action occurs when clicking the button | FAIL |
 
 
 
 
+## Module - Navigation Sidebar
+
+
+### Test Case 
+
+| Test ID | Description/Scenario | Precondition | Test Step | Expected Result | Actual Result | Status |
+|---------|----------------------|--------------|-----------|-----------------|---------------|--------|
+| KFQ_NAV_001 | Verify sidebar visibility | User is logged in | Open application dashboard | Sidebar navigation should be visible on the left side | Sidebar displayed correctly | PASS |
+| KFQ_NAV_002 | Verify Discover navigation | User is logged in | Click "Discover" icon/tab | User should be redirected to Discover page | Discover page opens successfully | PASS |
+| KFQ_NAV_003 | Verify Challenges navigation | User is logged in | Click "Challenges" icon/tab | User should be redirected to Challenges page | Challenges page opens successfully | PASS |
+| KFQ_NAV_004 | Verify Dojos navigation | User is logged in | Click "Dojos" icon/tab | User should be redirected to Dojos page | Dojos page opens successfully | PASS |
+| KFQ_NAV_005 | Verify Profile navigation | User is logged in | Click "Profile" icon/tab | User should be redirected to Profile page | Profile page opens successfully | PASS |
+| KFQ_NAV_006 | Verify Host Live navigation | User is logged in | Click "Host Live" option | User should be redirected to Host Live section or the challenge page of those that can be hosted live | user gets redirected to the challenge section that can be hosted live successfully | PASS |
+| KFQ_NAV_007 | Verify Upgrade Now navigation | User is logged in | Click "Upgrade Now" option | User should be redirected to Subscription/Upgrade section or a pop up should be there so that they can redirect to subscription section in profile | A pop up opens so that they can redirect to subscription section in profile | PASS |
+| KFQ_NAV_008 | Verify active page highlight in sidebar | User navigates between pages | Open different sections from sidebar | Current active page should be highlighted | Active section highlighted correctly | PASS |
+| KFQ_NAV_009 | Verify sidebar icons visibility | User is logged in | View sidebar | All sidebar icons should load correctly | All icons displayed correctly | PASS |
+| KFQ_NAV_010 | Verify sidebar labels visibility | User is logged in | View sidebar | All navigation labels should be readable and aligned | Labels displayed correctly | PASS |
+| KFQ_NAV_011 | Verify navigation state persistence | User navigates to another page | Refresh browser on selected page | Active navigation state should remain selected | Navigation state preserved correctly | PASS |
+| KFQ_NAV_012 | Verify tooltip or hover effect on sidebar items | User hovers over sidebar items | Hover over navigation options | Hover effect/tooltip should appear correctly | Hover effects displayed properly | PASS |
 
 
 

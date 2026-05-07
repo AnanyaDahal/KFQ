@@ -40,6 +40,18 @@ Notice mismatch
 
 
 
-
+**Google Account Linking Button Not Working**
+- **Description**: Clicking the "Link with Google" button in the Social Accounts section does not trigger any action, redirect, or account linking process.
+- **Priority**: High
+- **Severity**: Major
+- **Steps to reproduce**:
+Login to the application
+Navigate to Profile page
+Open the "Account Information" tab
+Locate the "Link with Google" button under Social Accounts
+Click on the button
+Observe the behavior
+Expected Result: User should be redirected to Google authentication/account linking flow.
+Actual Result: No action occurs when clicking the button
 
 
