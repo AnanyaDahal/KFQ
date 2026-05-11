@@ -10,6 +10,7 @@ Select "maths" challenge from left panel
 Observe total dojo count on left panel
 Compare with number of dojos displayed on right panel
 Notice mismatch in count
+- **Status**: 
 
 
 **Filter Functionality Issue (Active Status)**
@@ -22,6 +23,7 @@ Select any challenge (e.g., computer class)
 Apply "Active" filter from status dropdown
 Observe the dojo list
 Notice inactive dojos are also displayed
+- **Status**: Solved
 
 
 
@@ -36,6 +38,7 @@ Apply "Inactive" filter
 Observe displayed dojos and count
 Compare count with actual number of inactive dojos shown
 Notice mismatch
+- **Status**:
 
 
 
@@ -53,5 +56,6 @@ Click on the button
 Observe the behavior
 Expected Result: User should be redirected to Google authentication/account linking flow.
 Actual Result: No action occurs when clicking the button
+- **Status**:
 
 
